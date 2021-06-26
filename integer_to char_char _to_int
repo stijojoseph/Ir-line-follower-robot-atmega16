@@ -1,0 +1,66 @@
+#include <stdio.h>
+int char_to_int(char *f);
+char *int_to_char(int c);
+int main()
+{
+    char s[10]="23453";
+   int j=char_to_int(s);
+    
+    printf("%d",j);
+char *u=int_to_char(j);
+
+
+printf("int to char %s",u);
+    return 0;
+}
+int char_to_int(char *f)
+{
+int p=0;
+int i=0;
+while(f[i]!='\0')
+{
+p=p*10+(f[i]-'0');
+i++;
+    
+}
+
+
+
+return p;     
+}
+
+char *int_to_char(int c)
+{
+ char s[100];
+ 
+ int rem;
+ int i=0;
+while(c!=0)
+{
+ 
+rem=c%10;
+s[i]=rem + '0';
+
+c=c/10;
+i++;
+}
+//printf("int to char %s",s);
+char u[10];
+
+for(int i=0;s[i]!='\0';i++){}
+i--;
+for(int j=0;i>=0;i--,j++)
+{
+ u[j]=s[i];
+
+    
+}
+
+
+char *k=u;
+return k;    
+}
+
+
+
+
