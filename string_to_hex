@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#include<math.h>
+int string_to_hex(char *hex);
+int main()
+{
+   // printf("Hello World");
+
+
+int c=string_to_hex("0xaa");
+
+printf("0x%x",c);
+
+    return 0;
+}
+
+int string_to_hex(char *hex)
+{
+    
+int p=strlen(hex);
+int c=0;
+int j=0;
+for(int i=p-1;i>1;i--,j++)
+{
+if(hex[i]>='A' && hex[i]<='F')
+{
+c+=(hex[i]-'A'+10)*pow(16,j) ;   
+//printf("%d ",c);
+}
+else if(hex[i]>='a' && hex[i]<='f')
+{
+c+=(hex[i]-'a'+10)*pow(16,j) ;   
+//printf("%d ",c);
+}
+else if(hex[i]>='0' && hex[i]<='9')
+{
+c+=(hex[i]-'0')*pow(16,j) ;   
+//printf("%d ",c);
+}
+
+
+}    
+    
+return c;
+}
